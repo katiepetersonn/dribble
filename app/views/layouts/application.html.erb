@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DribbleApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav>
+      <%= link_to("All Designers", "/users") %>
+      <%= link_to("New Designer", "/users/new") %>
+      <%= link_to("All Projects", "/projects") %>
+      <%= link_to("New Project", "/projects/new") %>
+    </nav>
+
+  <hr>
+    <%= yield %>
+  <hr>
+  </body>
+</html>

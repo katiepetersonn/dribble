@@ -1,0 +1,15 @@
+<h1><%= @user.name %></h1>
+
+<%= image_tag( @user.image ) %>
+
+<ul>
+  <li>Name: <%= @user.name %></li>
+  <li>Location: <%= @user.location %></li>
+  <li>Skills: <%= @user.skills %></li>
+  <li>Hire Me: <%= @user.email %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to("Edit Designer", "/users/#{@user.id}/edit") %>
+  <%= link_to("Delete Designer", "/users/#{@user.id}", method: :delete, data: { confirm: "Are you sure?" }) %>
+</div>

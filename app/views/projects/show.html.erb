@@ -1,0 +1,17 @@
+<h1><%= @project.title %></h1>
+
+<% if @project.image %>
+  <%= image_tag(@project.image) %>
+<% end %>
+
+<p>Date: <%= @project.date %></p>
+
+<div class="controls">
+  <%= link_to("Edit this project", edit_project_path(@project)) %>
+  <%= link_to("Delete this project", project_path(@project), method: :delete, data: { confirm: "Are you sure?" }) %>
+</div>
+
+<p>
+  Designer Name:
+  <%= link_to(@project.user.name, "/users/#{@project.user_id}") %>
+</p>
