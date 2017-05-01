@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 
   def index
     @all_projects = Project.all
+    @project = Project.find_by(id: params["id"])
   end
 
   def show

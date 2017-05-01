@@ -11,14 +11,20 @@
   <body>
 
     <nav>
-      <%= link_to("All Designers", "/users") %>
-      <%= link_to("New Designer", "/users/new") %>
-      <%= link_to("All Projects", "/projects") %>
-      <%= link_to("New Project", "/projects/new") %>
-    </nav>
+     <div class="nav-wrapper">
+       <a href="#" class="brand-logo">Dribble</a>
+       <ul id="nav-mobile" class="right hide-on-med-and-down">
+         <li><a href="/users">All Designers</a></li>
+         <li><a href="/users/new">New Designer</a></li>
+         <li><a href="/projects">All Projects</a></li>
+         <li><a href="/projects/new">New Project</a></li>
+       </ul>
+     </div>
+   </nav>
 
   <hr>
     <%= yield %>
   <hr>
+
   </body>
 </html>

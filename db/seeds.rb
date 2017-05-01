@@ -5,7 +5,9 @@ creative = User.create({
     location: "San Francisco",
     skills: "Web design",
     image: "https://s-media-cache-ak0.pinimg.com/736x/57/9d/17/579d17a5433418e436375a0ea31efafc.jpg",
-    email: "creativedash@email.com"
+    email: "creativedash@email.com",
+    #  password: "chicken",
+    #  password_confirmation: "chicken"
   })
 
   slater = User.create({
@@ -13,7 +15,9 @@ creative = User.create({
       location: "Palo Alto",
       skills: "Icons",
       image: "https://pbs.twimg.com/profile_images/639150833670615040/1SCJ9Jrg.png",
-      email: "nick@email.com"
+      email: "nick@email.com",
+      # password: "chicken",
+      # password_confirmation: "chicken"
     })
 
 
@@ -22,7 +26,9 @@ creative = User.create({
       location: "Savannah",
       skills: "branding",
       image: "http://focuslabllc.com/images/logo.min.svg",
-      email: "focuslabs@email.com"
+      email: "focuslabs@email.com",
+      # password: "chicken",
+      # password_confirmation: "chicken"
   })
 
   damme = User.create ({
@@ -30,7 +36,9 @@ creative = User.create({
       location: "San Francisco",
       skills: "web",
       image: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAhZAAAAJGRjMjBiNjVlLTQwYzYtNDFmNC04ZDZmLTQ1NTNkZmE3MWQ5YQ.jpg",
-      email: "timvandamme@email.com"
+      email: "timvandamme@email.com",
+      # password: "chicken",
+      # password_confirmation: "chicken"
   })
 
   vic = User.create ({
@@ -39,9 +47,11 @@ creative = User.create({
       skills: "illustration",
       image: "https://static1.squarespace.com/static/52e01ffbe4b0edca9ba2f513/t/530dbc40e4b0769bdb49aa26/1393409089581/HeaderIllo.png",
       email: "vic@email.com"
+      # password: "chicken",
+      # password_confirmation: "chicken"
   })
 
-puts "User Count: #{ User.all.count }"
+puts "User Count: #{User.all.count }"
 
 Project.destroy_all
 
@@ -80,4 +90,74 @@ Project.destroy_all
     user_id: vic.id
   })
 
-puts "Project Count: #{Project.all.count}"
+  p6 = Project.create({
+    title: "Designer Profile UI",
+    date: '12-Apr-2017',
+    image: 'https://cdn.dribbble.com/users/107759/screenshots/3430245/designer-profile.png',
+    user_id: creative.id
+  })
+
+  p7 = Project.create({
+    title: "Quiet Signs",
+    date: '05-Dec-2016',
+    image: 'https://cdn.dribbble.com/users/31752/screenshots/3138227/quiet-signs_1x.jpg',
+    user_id: slater.id
+  })
+
+  p8 = Project.create({
+    title: "LABS - Caffeinated",
+    date: '24-09-2015',
+    image: 'https://s-media-cache-ak0.pinimg.com/originals/54/a6/17/54a617714ba0b7e436d0011e0e9d23c0.jpg',
+    user_id: focus.id
+  })
+
+  p9 = Project.create({
+    title: "Designer Profile UI",
+    date: '12-Apr-2017',
+    image: 'https://cdn.dribbble.com/users/107759/screenshots/3430245/designer-profile.png',
+    user_id: damme.id
+  })
+
+  p10 = Project.create({
+    title: "Sketch Component Workflow Illustration",
+    date: '12-Apr-2017',
+    image: 'https://s-media-cache-ak0.pinimg.com/originals/50/ce/02/50ce02bb28969bb319bb8a454166db9a.png',
+    user_id: vic.id
+  })
+
+  puts "Project Count: #{Project.all.count}"
+
+  Comment.destroy_all
+
+    c1 = Comment.create ({
+      name: "Comment One",
+      post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      user_id: creative.id
+    })
+
+
+    c2 = Comment.create ({
+      name: "Comment One",
+      post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      user_id: slater.id
+    })
+
+    c3 = Comment.create ({
+      name: "Comment One",
+      post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      user_id: focus.id
+    })
+
+    c4 = Comment.create ({
+      name: "Comment One",
+      post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      user_id: damme.id
+    })
+
+    c5 = Comment.create ({
+      name: "Comment One",
+      post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      user_id: vic.id
+    })
+
+  puts "Comment Count: #{Comment.all.count}"

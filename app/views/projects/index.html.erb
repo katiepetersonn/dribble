@@ -3,6 +3,7 @@
 <ul>
   <% @all_projects.each do |project| %>
     <li>
+      <%= image_tag project.image %>
       <%= link_to(project.title, "/projects/#{project.id}") %>
     </li>
   <% end %>

@@ -13,3 +13,14 @@
   <%= link_to("Edit Designer", "/users/#{@user.id}/edit") %>
   <%= link_to("Delete Designer", "/users/#{@user.id}", method: :delete, data: { confirm: "Are you sure?" }) %>
 </div>
+
+<!--
+Loop through all of the project that this user has created (and print out their titles)
+ -->
+<h3>Projects</h3>
+
+<% @user.projects.each do |project| %>
+  <p>
+    <%= link_to(project.title, project_path(project)) %>
+  </p>
+<% end %>
