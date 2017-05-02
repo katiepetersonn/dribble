@@ -3,44 +3,92 @@
   <head>
     <title>DribbleApp</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <header>
+      <!-- <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+      </ul> -->
 
-    <nav>
-      <% if @current_user %>
-        <%= link_to @current_user.email, user_path(@current_user) %>
-        <%= link_to "Log Out", "/logout", method: :delete %>
-        <%= link_to "Edit Profile", edit_user_path(@current_user) %>
-        <%= link_to "All designers", "/users" %>
-        <%= link_to "All projects", "/projects" %>
-        <%= link_to "New project", "/projects/new" %>
-        <%= link_to "Edit Profile", edit_user_path(@current_user) %>
-      <% else %>
-        <%= link_to "Sign in", "/login" %>
-        <%= link_to "Sign up", "/users/new" %>
-      <% end %>
-   </nav>
+       <nav>
+      <div class="nav-wrapper" >
+        <a href="" class="brand-logo">Dribble</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down" >
+          <% if @current_user %>
+              <li><a href="/users">All designers</a></li>
+              <li><a href="/projects">All projects</a></li>
+              <li><a href="/projects/new">New project</a></li>
+              <li><a href="/logout",>Sign Out</a></li>
+              <li><a href= "user_path(@current_user)">Hi <%= @current_user.name %></a></li>
 
+                <!-- <%= link_to "Log Out", "/logout", method: :delete %> -->
+          <% else %>
+              <li><a href="/login">Sign In</a></li>
+              <li><a href="/users/new">Sign Up</a></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
 
+    <!-- PREVIOUS NAV -->
     <!-- <nav>
-     <div class="nav-wrapper">
-       <a href="#" class="brand-logo">Dribble</a>
-       <ul id="nav-mobile" class="right hide-on-med-and-down">
-         <li><a href="/users">All Designers</a></li>
-         <li><a href="/users/new">New Designer</a></li>
-         <li><a href="/projects">All Projects</a></li>
-         <li><a href="/projects/new">New Project</a></li>
-       </ul>
-     </div>
-   </nav> -->
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Dribble</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if @current_user %>
+          <%= link_to @current_user.email, user_path(@current_user) %>
+          <%= link_to "Log Out", "/logout", method: :delete %>
+          <%= link_to "Edit Profile", edit_user_path(@current_user) %>
+          <%= link_to "All designers", "/users" %>
+          <%= link_to "All projects", "/projects" %>
+          <%= link_to "New project", "/projects/new" %>
+          <%= link_to "Edit Profile", edit_user_path(@current_user) %>
+        <% else %>
+          <%= link_to "Sign in", "/login" %>
+          <%= link_to "Sign up", "/users/new" %>
+        <% end %>
+        </div>
+     </nav>
+    -->
 
+  </header>
 
+  <main>
     <%= yield %>
+  </main>
 
 
-  </body>
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Show and tell for designers</h5>
+          <p class="grey-text text-lighten-4">
+                What are you working on? Dribbble is a community of designers sharing screenshots of their work, process, and projects.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+       © 2017 Dribble. All screenshots © their respective owners.
+      </div>
+    </div>
+  </footer>
+
+
+</body>
 </html>

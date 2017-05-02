@@ -15,3 +15,5 @@
 //= require materialize-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(".dropdown-button").dropdown( { hover: false } );

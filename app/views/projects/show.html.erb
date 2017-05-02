@@ -1,30 +1,52 @@
 <h1><%= @project.title %></h1>
 
-<% if @project.image %>
-  <%= image_tag(@project.image) %>
-<% end %>
 
-<p>Date: <%= @project.date %></p>
+<div class="container">
+      <div class="row">
+        <div class="col s7 #ffffff white">
+          <p>Date: <%= @project.date %></p>
+          <p>
+            Designer Name:
+            <%= link_to(@project.user.name, "/users/#{@project.user_id}") %>
+          </p>
+          <% if @project.image %>
+            <%= image_tag(@project.image) %>
+          <% end %>
 
-<div class="controls">
-  <%= link_to("Edit this project", edit_project_path(@project)) %>
-  <%= link_to("Delete this project", project_path(@project), method: :delete, data: { confirm: "Are you sure?" }) %>
+          <h2>Comments</h2>
+          <hr>
+          
+          <%= render @project.comments %>
+          <hr>
+          <h2>Add a comment:</h2>
+
+          <%= render 'comments/form' %>
+
+          <%= link_to 'Back', projects_path %>
+
+        </div>
+        <div class="col s5 #ffffff white">
+
+          <hr>
+
+          <p>
+            Likes:
+          </p>
+
+          <hr>
+          <p>
+            More from Creativedash:
+              <p>
+
+              </p>
+
+          </p>
+          <hr>
+          <div class="controls">
+            <%= link_to("Edit this project", edit_project_path(@project)) %>
+            <%= link_to("Delete this project", project_path(@project), method: :delete, data: { confirm: "Are you sure?" }) %>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
-
-<p>
-  Designer Name:
-  <%= link_to(@project.user.name, "/users/#{@project.user_id}") %>
-</p>
-
-<p>
-  Likes:
-</p>
-
-<h2>Comments</h2>
-<%= render @project.comments %>
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>

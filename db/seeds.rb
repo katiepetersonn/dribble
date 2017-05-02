@@ -140,36 +140,36 @@ Project.destroy_all
   # Comment.destroy_all
 
     c1 = Comment.create ({
-      name: "Comment One",
-      post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      name: "Alba Fernández",
+      post: "aww! They are so cute :3 Love it!",
       user_id: creative.id,
       project_id: p1.id
     })
 
     c2 = Comment.create ({
-      name: "Comment One",
-      post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      name: "Domestic Society Design Co.",
+      post: "This is cool man.",
       user_id: slater.id,
       project_id: p2.id
     })
 
     c3 = Comment.create ({
-      name: "Comment One",
-      post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      name: "Lauren Beltramo",
+      post: "Nice!",
       user_id: focus.id,
       project_id: p3.id
     })
 
     c4 = Comment.create ({
-      name: "Comment One",
-      post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      name: "Bud Thomas",
+      post: "Oh, I LIKE THATT.",
       user_id: damme.id,
       project_id: p4.id
     })
 
     c5 = Comment.create ({
-      name: "Comment One",
-      post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      name: "Jorge Cisterna",
+      post: "Amazing project, congratulations!!",
       user_id: vic.id,
       project_id: p5.id
     })

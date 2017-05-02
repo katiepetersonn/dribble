@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
 
-  http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
-
   def create
     @project = Project.find(params[:project_id])
     @comment = @project.comments.new(comment_params)
+    @comment.name = @current_user.name
     @comment.user = @current_user
     @comment.save
+
     redirect_to project_path(@project)
   end
 

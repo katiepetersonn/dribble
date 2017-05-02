@@ -1,9 +1,9 @@
 <h1>All Designers</h1>
 
 <div class="container">
-  <div class="row">
+      <div class="row">
       <% @all_users.each do |user| %>
-        <div class="col s6">
+        <div class="col s4 #ffffff white" style="min-height: 170px" >
             <%= link_to(user.name, "/users/#{user.id}") %>
         </div>
       <% end %>
