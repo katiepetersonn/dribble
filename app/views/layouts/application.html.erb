@@ -12,8 +12,12 @@
 
     <nav>
       <% if @current_user %>
-        <%= link_to "Log Out", "/logout", method: :delete %>
         <%= link_to @current_user.email, user_path(@current_user) %>
+        <%= link_to "Log Out", "/logout", method: :delete %>
+        <%= link_to "Edit Profile", edit_user_path(@current_user) %>
+        <%= link_to "All designers", "/users" %>
+        <%= link_to "All projects", "/projects" %>
+        <%= link_to "New project", "/projects/new" %>
         <%= link_to "Edit Profile", edit_user_path(@current_user) %>
       <% else %>
         <%= link_to "Sign in", "/login" %>
