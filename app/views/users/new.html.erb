@@ -1,31 +1,6 @@
-<h1>Create a new Designer</h1>
+<h1>Sign Up</h1>
 
-<!--
-Secure - authenticity tokens
-Reusable
-Easier to add prefilled values
--->
+<p>Dribble is a show and tell community for designers
+Sign up to find, follow and hire members of our small but vibrant community of designers, icon artists, illustrators, interface designers, typographers, and other creative folks.</p>
 
-<%= form_for @user do |f| %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </p>
-  <p>
-    <%= f.label :skills %>
-    <%= f.text_field :skills %>
-  </p>
-  <p>
-    <%= f.label :image %>
-    <%= f.url_field :image %>
-  </p>
-  <p>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </p>
-  <%= f.submit %>
-<% end %>
+<%= render partial: "form" %>

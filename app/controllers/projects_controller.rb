@@ -2,11 +2,12 @@ class ProjectsController < ApplicationController
 
   def index
     @all_projects = Project.all
-    @project = Project.find_by(id: params["id"])
+    # @project = Project.find_by(id: params["id"])
   end
 
   def show
     @project = Project.find_by(id: params["id"])
+    @comments = Comment.where( project_id: @project.id )
   end
 
   def new
@@ -38,4 +39,12 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:title, :date, :image, :user_id)
     end
+
+    def authorise
+      unless @current_user
+      flash[:error] = "You need to be logged in for that"
+      redirect_to "/login"
+    end
+  end
+
 end

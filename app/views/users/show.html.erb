@@ -1,5 +1,9 @@
 <h1><%= @user.name %></h1>
 
+<p>
+  Password Digest: <%= @user.password_digest %>
+</p>
+
 <%= image_tag( @user.image ) %>
 
 <ul>

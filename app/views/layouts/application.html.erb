@@ -11,6 +11,18 @@
   <body>
 
     <nav>
+      <% if @current_user %>
+        <%= link_to "Log Out", "/logout", method: :delete %>
+        <%= link_to @current_user.email, user_path(@current_user) %>
+        <%= link_to "Edit Profile", edit_user_path(@current_user) %>
+      <% else %>
+        <%= link_to "Sign in", "/login" %>
+        <%= link_to "Sign up", "/users/new" %>
+      <% end %>
+   </nav>
+
+
+    <!-- <nav>
      <div class="nav-wrapper">
        <a href="#" class="brand-logo">Dribble</a>
        <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -20,11 +32,11 @@
          <li><a href="/projects/new">New Project</a></li>
        </ul>
      </div>
-   </nav>
+   </nav> -->
 
-  <hr>
+
     <%= yield %>
-  <hr>
+
 
   </body>
 </html>

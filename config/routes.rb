@@ -2,25 +2,19 @@ Rails.application.routes.draw do
 
   root to: 'pages#index'
 
+  resources :users
+
+  get 'session/new'
+
+  #LOGIN
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/logout' => 'session#destroy'
+
   #PROJECTS
+  resources :projects do
+    resources :comments
+  end
 
-  resources :projects
-
-  #USERS
-
-  # CREATE
-  get '/users/new' => 'users#new'
-  post '/users' => 'users#create'
-
-  #READ
-  get 'users' => 'users#index'
-  get 'users/:id' => 'users#show'
-
-  # UPDATE
-  get '/users/:id/edit' => 'users#edit'
-  patch '/users/:id' => 'users#update'
-
-  # DELETE
-  delete '/users/:id' => 'users#destroy'
 
 end

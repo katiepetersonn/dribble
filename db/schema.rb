@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170501093617) do
     t.text     "name"
     t.text     "post"
     t.integer  "user_id"
+    t.integer  "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

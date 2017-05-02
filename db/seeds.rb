@@ -1,13 +1,23 @@
 User.destroy_all
 
+admin = User.create({
+    name: "admin",
+    location: "Sydney",
+    skills: "Web",
+    image: "http://www.fillmurray.com/200/300",
+    email: "admin@email.com",
+    password: "chicken",
+    password_confirmation: "chicken"
+  })
+
 creative = User.create({
     name: "Creativedash",
     location: "San Francisco",
     skills: "Web design",
     image: "https://s-media-cache-ak0.pinimg.com/736x/57/9d/17/579d17a5433418e436375a0ea31efafc.jpg",
     email: "creativedash@email.com",
-    #  password: "chicken",
-    #  password_confirmation: "chicken"
+     password: "chicken",
+     password_confirmation: "chicken"
   })
 
   slater = User.create({
@@ -16,8 +26,8 @@ creative = User.create({
       skills: "Icons",
       image: "https://pbs.twimg.com/profile_images/639150833670615040/1SCJ9Jrg.png",
       email: "nick@email.com",
-      # password: "chicken",
-      # password_confirmation: "chicken"
+      password: "chicken",
+      password_confirmation: "chicken"
     })
 
 
@@ -27,8 +37,8 @@ creative = User.create({
       skills: "branding",
       image: "http://focuslabllc.com/images/logo.min.svg",
       email: "focuslabs@email.com",
-      # password: "chicken",
-      # password_confirmation: "chicken"
+      password: "chicken",
+      password_confirmation: "chicken"
   })
 
   damme = User.create ({
@@ -37,8 +47,8 @@ creative = User.create({
       skills: "web",
       image: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAhZAAAAJGRjMjBiNjVlLTQwYzYtNDFmNC04ZDZmLTQ1NTNkZmE3MWQ5YQ.jpg",
       email: "timvandamme@email.com",
-      # password: "chicken",
-      # password_confirmation: "chicken"
+      password: "chicken",
+      password_confirmation: "chicken"
   })
 
   vic = User.create ({
@@ -46,9 +56,9 @@ creative = User.create({
       location: "Durham",
       skills: "illustration",
       image: "https://static1.squarespace.com/static/52e01ffbe4b0edca9ba2f513/t/530dbc40e4b0769bdb49aa26/1393409089581/HeaderIllo.png",
-      email: "vic@email.com"
-      # password: "chicken",
-      # password_confirmation: "chicken"
+      email: "vic@email.com",
+      password: "chicken",
+      password_confirmation: "chicken"
   })
 
 puts "User Count: #{User.all.count }"
@@ -127,37 +137,43 @@ Project.destroy_all
 
   puts "Project Count: #{Project.all.count}"
 
-  Comment.destroy_all
+  # Comment.destroy_all
 
     c1 = Comment.create ({
       name: "Comment One",
       post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      user_id: creative.id
+      user_id: creative.id,
+      project_id: p1.id
     })
-
 
     c2 = Comment.create ({
       name: "Comment One",
       post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      user_id: slater.id
+      user_id: slater.id,
+      project_id: p2.id
     })
 
     c3 = Comment.create ({
       name: "Comment One",
       post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      user_id: focus.id
+      user_id: focus.id,
+      project_id: p3.id
     })
 
     c4 = Comment.create ({
       name: "Comment One",
       post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      user_id: damme.id
+      user_id: damme.id,
+      project_id: p4.id
     })
 
     c5 = Comment.create ({
       name: "Comment One",
       post: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      user_id: vic.id
+      user_id: vic.id,
+      project_id: p5.id
     })
 
-  puts "Comment Count: #{Comment.all.count}"
+puts "Comment Count: #{Comment.all.count}"
+
+# puts "Creative projects: #{ creative.projects.count }"

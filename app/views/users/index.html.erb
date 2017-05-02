@@ -1,9 +1,11 @@
 <h1>All Designers</h1>
 
-<ul>
-  <% @all_users.each do |user| %>
-    <li>
-      <%= link_to(user.name, "/users/#{user.id}") %>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+      <% @all_users.each do |user| %>
+        <div class="col s6">
+            <%= link_to(user.name, "/users/#{user.id}") %>
+        </div>
+      <% end %>
+  </div>
+</div>

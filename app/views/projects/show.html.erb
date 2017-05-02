@@ -15,3 +15,16 @@
   Designer Name:
   <%= link_to(@project.user.name, "/users/#{@project.user_id}") %>
 </p>
+
+<p>
+  Likes:
+</p>
+
+<h2>Comments</h2>
+<%= render @project.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
