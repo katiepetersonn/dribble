@@ -13,8 +13,8 @@
   </p>
 
   <p>
-    <%= f.label :user_id %>
-    <%= f.collection_select(:user_id, User.all, :id, :name) %>
+    <%= f.label :current_user_id %>
+    <%= f.collection_select(:current_user_id, User.all, :id, :name) %>
   </p>
   <%= f.submit %>
 <% end %>
