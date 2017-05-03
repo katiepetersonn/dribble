@@ -1,7 +1,7 @@
 User.destroy_all
 
 admin = User.create({
-    name: "admin",
+    name: "Fred",
     location: "Sydney",
     skills: "Web",
     image: "http://www.fillmurray.com/200/300",

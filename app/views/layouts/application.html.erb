@@ -3,7 +3,7 @@
   <head>
     <title>DribbleApp</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -16,7 +16,7 @@
         <li><a href="#!">three</a></li>
       </ul> -->
 
-       <nav>
+    <nav>
       <div class="nav-wrapper" >
         <a href="" class="brand-logo">Dribble</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down" >
@@ -24,16 +24,18 @@
               <li><a href="/users">All designers</a></li>
               <li><a href="/projects">All projects</a></li>
               <li><a href="/projects/new">New project</a></li>
-              <li><a href="/logout",>Sign Out</a></li>
+              <li><%= link_to "Log Out", "/logout", method: :delete %></li>
               <li><a href= "user_path(@current_user)">Hi <%= @current_user.name %></a></li>
 
-                <!-- <%= link_to "Log Out", "/logout", method: :delete %> -->
           <% else %>
               <li><a href="/login">Sign In</a></li>
               <li><a href="/users/new">Sign Up</a></li>
           <% end %>
         </ul>
       </div>
+
+
+
     </nav>
 
     <!-- PREVIOUS NAV -->

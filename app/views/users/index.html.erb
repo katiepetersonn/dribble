@@ -1,11 +1,26 @@
 <h1>All Designers</h1>
 
-<div class="container">
-      <div class="row">
-      <% @all_users.each do |user| %>
-        <div class="col s4 #ffffff white" style="min-height: 170px" >
-            <%= link_to(user.name, "/users/#{user.id}") %>
+<% @all_users.each do |user| %>
+
+<div class="row">
+    <div class="col s12 m6 xl4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator users-index" src="<%= user.image %>">
         </div>
-      <% end %>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"> <%= user.name %> </span>
+          </div>
+          <p>Designer: <a <%= link_to(user.name, "/users/#{user.id}") %></a></a></p>
+          <p>Projects: <a ></a></a></p>
+
+
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%= user.name %><i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      </div>
+    </div>
   </div>
+
+  <% end %>
 </div>
