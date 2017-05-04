@@ -3,8 +3,8 @@ User.destroy_all
 admin = User.create({
     name: "Fred",
     location: "Sydney",
-    skills: "Web",
-    image: "http://www.fillmurray.com/200/300",
+    skills: "Web, Illustration, Identity",
+    image: "https://cottonbureau.imgix.net/sellers/originals/5331_simon-sek_jcDv.jpg?bg=FFF&chromasub=444&fit=max&fm=pjpg&ixlib=php-1.1.0&q=50&usm=10&usmrad=2.5&w=300",
     email: "admin@email.com",
     password: "chicken",
     password_confirmation: "chicken"
@@ -13,8 +13,8 @@ admin = User.create({
 creative = User.create({
     name: "Creativedash",
     location: "San Francisco",
-    skills: "Web design",
-    image: "https://s-media-cache-ak0.pinimg.com/736x/57/9d/17/579d17a5433418e436375a0ea31efafc.jpg",
+    skills: "Web design, Animation, Graphics",
+    image: "https://cdn.dribbble.com/users/107759/screenshots/3442108/galactic_1x.png",
     email: "creativedash@email.com",
      password: "chicken",
      password_confirmation: "chicken"
@@ -23,8 +23,8 @@ creative = User.create({
   slater = User.create({
       name: "Nick Slater",
       location: "Palo Alto",
-      skills: "Icons",
-      image: "https://pbs.twimg.com/profile_images/639150833670615040/1SCJ9Jrg.png",
+      skills: "Icons" "Logos",
+      image: "https://cdn.dribbble.com/users/31752/screenshots/3395152/japan.png",
       email: "nick@email.com",
       password: "chicken",
       password_confirmation: "chicken"
@@ -34,7 +34,7 @@ creative = User.create({
   focus = User.create ({
       name: "Focus Labs",
       location: "Savannah",
-      skills: "branding",
+      skills: "Branding, Websites" ,
       image: "http://focuslabllc.com/images/logo.min.svg",
       email: "focuslabs@email.com",
       password: "chicken",
@@ -44,8 +44,8 @@ creative = User.create({
   damme = User.create ({
       name: "Tim Van Damme",
       location: "San Francisco",
-      skills: "web",
-      image: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAhZAAAAJGRjMjBiNjVlLTQwYzYtNDFmNC04ZDZmLTQ1NTNkZmE3MWQ5YQ.jpg",
+      skills: "web, animations, logos, graphic design",
+      image: "https://s-media-cache-ak0.pinimg.com/236x/cc/8d/e9/cc8de9c18f28c7a5c477b25bf53bf1a1.jpg",
       email: "timvandamme@email.com",
       password: "chicken",
       password_confirmation: "chicken"
@@ -54,7 +54,7 @@ creative = User.create({
   vic = User.create ({
       name: "Vic Bell",
       location: "Durham",
-      skills: "illustration",
+      skills: "illustration, typography",
       image: "https://static1.squarespace.com/static/52e01ffbe4b0edca9ba2f513/t/530dbc40e4b0769bdb49aa26/1393409089581/HeaderIllo.png",
       email: "vic@email.com",
       password: "chicken",
@@ -68,6 +68,7 @@ Project.destroy_all
   p1 = Project.create({
     title: "Yummies",
     date: '26-Apr-2017',
+    description: "A small preview of our scrumptiously yummy & colorful food icons for Sketch and Illustrator.",
     image: 'https://cdn.dribbble.com/users/107759/screenshots/3462737/yummies_1x.png',
     user_id: creative.id
   })
@@ -75,6 +76,7 @@ Project.destroy_all
   p2 = Project.create({
     title: "New York City",
     date: '01-Oct-2015',
+    description: "I miss New York ",
     image: 'http://imgs.abduzeedo.com/files/articles/more-slick-artworks-nick-slater/nyc_1x.png',
     user_id: slater.id
   })
@@ -82,6 +84,7 @@ Project.destroy_all
   p3 = Project.create({
     title: "Never Stop Learning",
     date: '26-Apr-2017',
+    description: "Keep on learning!",
     image: 'https://cdn.dribbble.com/users/742099/screenshots/3457961/neverstoplearning_teaser.jpg',
     user_id: focus.id
   })
@@ -96,6 +99,7 @@ Project.destroy_all
   p5 = Project.create({
     title: "HeyTaco City",
     date: '28-Apr-2017',
+    description: "City life drawn in pen.",
     image: 'https://cdn.dribbble.com/users/37530/screenshots/3463470/heytaco-city-linework.png',
     user_id: vic.id
   })
@@ -103,6 +107,7 @@ Project.destroy_all
   p6 = Project.create({
     title: "Designer Profile UI",
     date: '12-Apr-2017',
+    description: "Simple interface for a new client.",
     image: 'https://cdn.dribbble.com/users/107759/screenshots/3430245/designer-profile.png',
     user_id: creative.id
   })
@@ -110,6 +115,7 @@ Project.destroy_all
   p7 = Project.create({
     title: "Quiet Signs",
     date: '05-Dec-2016',
+    description: "Library signs to ensure that the library remains a peaceful place to work.",
     image: 'https://cdn.dribbble.com/users/31752/screenshots/3138227/quiet-signs_1x.jpg',
     user_id: slater.id
   })
@@ -117,20 +123,23 @@ Project.destroy_all
   p8 = Project.create({
     title: "LABS - Caffeinated",
     date: '24-09-2015',
+    description: "Simple branding for a local coffee company.",
     image: 'https://s-media-cache-ak0.pinimg.com/originals/54/a6/17/54a617714ba0b7e436d0011e0e9d23c0.jpg',
     user_id: focus.id
   })
 
   p9 = Project.create({
-    title: "Designer Profile UI",
+    title: "COCORICO!UI",
     date: '12-Apr-2017',
-    image: 'https://cdn.dribbble.com/users/107759/screenshots/3430245/designer-profile.png',
-    user_id: damme.id
+    description: "The Gallic Rooster is the most famous symbol of France. Cocorico is the french word for your english Cock-a-doodle-doo",
+    image: 'https://cdn.dribbble.com/users/926927/screenshots/3471974/stickermule_france_contest_1x.jpg',
+    user_id: admin.id
   })
 
   p10 = Project.create({
     title: "Sketch Component Workflow Illustration",
     date: '12-Apr-2017',
+    description: "Workflow overview",
     image: 'https://s-media-cache-ak0.pinimg.com/originals/50/ce/02/50ce02bb28969bb319bb8a454166db9a.png',
     user_id: vic.id
   })

@@ -4,6 +4,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.text :title
       t.date :date
       t.text :image
+      t.text :description
       t.integer  "user_id"
 
       t.timestamps

@@ -1,26 +1,42 @@
-<h1><%= @user.name %></h1>
+<h1>      </h1>
 
-<%= image_tag( @user.image ) %>
+<div class="container">
+  <div class="row">
+    <div class="col s12 #ffffff white">
+      <div class="center">
 
-<ul>
-  <li>Name: <%= @user.name %></li>
-  <li>Location: <%= @user.location %></li>
-  <li>Skills: <%= @user.skills %></li>
-  <li>Hire Me: <%= @user.email %></li>
-</ul>
+        <h1><%= @user.name %></h1>
 
-<div class="controls">
-  <%= link_to("Edit Designer", "/users/#{@user.id}/edit") %>
-  <%= link_to("Delete Designer", "/users/#{@user.id}", method: :delete, data: { confirm: "Are you sure?" }) %>
+          <div class = img>
+          <%= image_tag( @user.image ) %>
+          </div>
+
+          <ul>
+            <li><div class = a-links >Name:</div> <%= @user.name %></li>
+            <li>Location: <%= @user.location %></li>
+            <li>Skills: <%= @user.skills %></li>
+            <li>Hire Me: <%= @user.email %></li>
+          </ul>
+
+          <h3>More from <%= @user.name %></h3>
+
+          <div class="project-links">
+            <% @user.projects.each do |project| %>
+              <p>
+                <%= link_to(project.title, project_path(project)) %>
+              </p>
+            <% end %>
+          </div>
+
+          <div class="controls">
+            <% if @current_user && @current_user.id == @user.id  %>
+              <%= link_to("Edit Profile", "/users/#{@user.id}/edit") %>
+
+              <%= link_to("Delete Profile", "/users/#{@user.id}", method: :delete, data: { confirm: "Are you sure?" }) %>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+  </div>
 </div>
-
-<!--
-Loop through all of the project that this user has created (and print out their titles)
- -->
-<h3>Projects</h3>
-
-<% @user.projects.each do |project| %>
-  <p>
-    <%= link_to(project.title, project_path(project)) %>
-  </p>
-<% end %>

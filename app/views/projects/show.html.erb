@@ -1,52 +1,54 @@
-<h1><%= @project.title %></h1>
+<h1>  </h1>
 
 
-<div class="container">
-      <div class="row">
-        <div class="col s7 #ffffff white">
-          <p>Date: <%= @project.date %></p>
-          <p>
-            Designer Name:
-            <%= link_to(@project.user.name, "/users/#{@project.user_id}") %>
-          </p>
-          <% if @project.image %>
-            <%= image_tag(@project.image) %>
-          <% end %>
-
-          <h2>Comments</h2>
-          <hr>
-          
-          <%= render @project.comments %>
-          <hr>
-          <h2>Add a comment:</h2>
-
-          <%= render 'comments/form' %>
-
-          <%= link_to 'Back', projects_path %>
-
-        </div>
-        <div class="col s5 #ffffff white">
-
-          <hr>
-
-          <p>
-            Likes:
-          </p>
-
-          <hr>
-          <p>
-            More from Creativedash:
+  <div class="container">
+    <div class="row">
+      <div class="col s12 #ffffff white">
+        <div class="center">
+          <h1><%= @project.title %></h1>
               <p>
-
+                by <%= link_to(@project.user.name, "/users/#{@project.user_id}") %>
+                on <%= @project.date.strftime("%B %d, %Y") %>
               </p>
 
-          </p>
-          <hr>
-          <div class="controls">
-            <%= link_to("Edit this project", edit_project_path(@project)) %>
-            <%= link_to("Delete this project", project_path(@project), method: :delete, data: { confirm: "Are you sure?" }) %>
-          </div>
+              <div class = img>
+              <% if @project.image %>
+                <%= image_tag(@project.image) %>
+              <% end %>
+              </div>
+
+              <p>
+                <%= @project.description %>
+              </p>
         </div>
-      </div>
-  </div>
+
+
+            <h2>Comments</h2>
+
+            <hr>
+
+            <%= render @project.comments %>
+
+            <hr>
+
+            <h2>Add a comment:</h2>
+
+            <%= render 'comments/form' %>
+
+            <p>
+              More from <%= link_to(@project.user.name, "/users/#{@project.user_id}") %>
+            </p>
+          </div>
+
+
+              <hr>
+              <div class="controls">
+                <% if @current_user.id == @project.user_id  %>
+                  <%= link_to("Edit this project", edit_project_path(@project)) %>
+                  <%= link_to("Delete this project", project_path(@project), method: :delete, data: { confirm: "Are you sure?" }) %>
+                <% end %>
+              </div>
+                <%= link_to 'Back', projects_path %>
+        </div>
+    </div>
 </div>

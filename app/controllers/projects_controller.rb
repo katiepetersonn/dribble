@@ -16,6 +16,8 @@ class ProjectsController < ApplicationController
 
   def create
     project = Project.new( project_params() )
+    cloudinary = Cloudinary::Uploader.upload( params[ "project" ][ "link" ] )
+    project.image = cloudinary["url"]
     project.user = @current_user
     project.save
 

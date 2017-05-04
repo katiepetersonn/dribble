@@ -9,16 +9,10 @@
 
   <body>
   <header>
-      <!-- <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-      </ul> -->
 
     <nav>
       <div class="nav-wrapper" >
-        <a href="" class="brand-logo">Dribble</a>
+        <a href="/users" class="brand-logo">Dribble</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down" >
           <% if @current_user %>
               <li><a href="/users">All designers</a></li>
@@ -33,31 +27,7 @@
           <% end %>
         </ul>
       </div>
-
-
-
     </nav>
-
-    <!-- PREVIOUS NAV -->
-    <!-- <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Dribble</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <% if @current_user %>
-          <%= link_to @current_user.email, user_path(@current_user) %>
-          <%= link_to "Log Out", "/logout", method: :delete %>
-          <%= link_to "Edit Profile", edit_user_path(@current_user) %>
-          <%= link_to "All designers", "/users" %>
-          <%= link_to "All projects", "/projects" %>
-          <%= link_to "New project", "/projects/new" %>
-          <%= link_to "Edit Profile", edit_user_path(@current_user) %>
-        <% else %>
-          <%= link_to "Sign in", "/login" %>
-          <%= link_to "Sign up", "/users/new" %>
-        <% end %>
-        </div>
-     </nav>
-    -->
 
   </header>
 

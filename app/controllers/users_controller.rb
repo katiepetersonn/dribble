@@ -5,11 +5,12 @@ class UsersController < ApplicationController
 
   def index
     @all_users = User.all
-    @user = User.find_by(id: params['id'])
+    # @user = User.find_by(id: params['id'])
   end
 
   def show
     @user = User.find_by(id: params['id'])
+    # raise "hell"
   end
 
   def new

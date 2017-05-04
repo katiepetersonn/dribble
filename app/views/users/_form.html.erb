@@ -1,41 +1,51 @@
-<% unless @user.errors.full_messages.empty? %>
+<div class="container">
+  <div class="row">
+    <div class="col s12 #ffffff white">
+      <% unless @user.errors.full_messages.empty? %>
 
-  <% @user.errors.full_messages.each do |msg| %>
-    <p>
-      <%= msg %>
-    </p>
-  <% end %>
+        <% @user.errors.full_messages.each do |msg| %>
+          <p>
+            <%= msg %>
+          </p>
+        <% end %>
 
-<% end %>
+      <% end %>
 
-<%= form_for @user do |f| %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name, required: true %>
-  </p>
-  <p>
-    <%= f.label :email %>
-    <%= f.email_field :email, required: true %>
-  </p>
-  <p>
-    <%= f.label :location %>
-    <%= f.text_field :location, required: true %>
-  </p>
-  <p>
-    <%= f.label :image %>
-    <%= f.url_field :image, required: false %>
-  </p>
-  <p>
-    <%= f.label :skills %>
-    <%= f.text_field :skills, required: false %>
-  </p>
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password, required: true %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, required: true %>
-  </p>
-  <%= f.submit %>
-<% end %>
+      <p>Dribble is a show and tell community for designers
+      Sign up to find, follow and hire members of our small but vibrant community of designers, icon artists, illustrators, interface designers, typographers, and other creative folks.</p>
+
+      <%= form_for @user do |f| %>
+        <p>
+          <%= f.label :name %>
+          <%= f.text_field :name, required: true %>
+        </p>
+        <p>
+          <%= f.label :email %>
+          <%= f.email_field :email, required: true %>
+        </p>
+        <p>
+          <%= f.label :location %>
+          <%= f.text_field :location, required: true %>
+        </p>
+        <p>
+          <%= f.label :image %>
+          <%= f.url_field :image, required: false %>
+        </p>
+        <p>
+          <%= f.label :skills %>
+          <%= f.text_field :skills, required: false %>
+        </p>
+        <p>
+          <%= f.label :password %>
+          <%= f.password_field :password, required: true %>
+        </p>
+        <p>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, required: true %>
+        </p>
+
+          <button class="btn waves-effect waves-light #f06292 pink lighten-2" type="submit" name="action">Submit</button>s
+      <% end %>
+    </div>
+  </div>
+</div>
