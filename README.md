@@ -1,25 +1,56 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+What I solved:
 
-Things you may want to cover:
+  A platform for designers to share their work.
 
-* Ruby version
+Demo:
 
-* System dependencies
+  Sign in/ sign up (new user)
+  New project
+  Update profile
+  Update project (only if you are the author of that project)
+  Comment on a project
+  Delete comment
+  Sign out
 
-* Configuration
+Schema:
 
-* Database creation
+  Users table
+  Project table
+  Comments table
 
-* Database initialization
+Models:
 
-* How to run the test suite
+  A user has many projects.
+  A user has many comments.
 
-* Services (job queues, cache servers, search engines, etc.)
+  A project belongs to a user.
+  A project has many comments.
 
-* Deployment instructions
+  A comment belongs to a project.
 
-* ...
-# dribble
+Awkward bits:
+
+  Associations and the cryptic errors.
+
+Awesome bits:
+
+  Building a real world application and the ability to build upon features.
+
+Where next:
+
+  Make it responsive
+  Allow followers.
+
+Thanks:
+
+  To Jack and Kane for their incredible guidance, answering ridiculous questions and endless bug fixing.
+
+User stories:
+
+  As a user I would like to create a project so I can share my work.
+  As a user I would like to edit a project so I can modify my work.
+  As a user I would like to delete a project so I can remove my work.
+  As a user I would like to comment on other people's project so I can offer feedback.
+  As a user I would like to delete comments on other people's project.
