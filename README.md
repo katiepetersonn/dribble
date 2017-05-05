@@ -23,11 +23,17 @@ Wireframes:
 Demo:
 
   Sign in/ sign up (new user)
+
   New project
+
   Update profile
+
   Update project (only if you are the author of that project)
+
   Comment on a project
+
   Delete comment
+  
   Sign out
 
 Schema:
