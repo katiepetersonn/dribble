@@ -7,14 +7,18 @@ What I solved:
 User stories:
 
     As a user I would like to create a project so I can share my work.
+
     As a user I would like to edit a project so I can modify my work.
+
     As a user I would like to delete a project so I can remove my work.
+
     As a user I would like to comment on other people's project so I can offer feedback.
+
     As a user I would like to delete comments on other people's project.
 
 Wireframes:
 
-
+  https://www.dropbox.com/s/l5j1phvqk526til/Dribble%20Wireframes.png?dl=0
 
 Demo:
 
@@ -45,10 +49,15 @@ Models:
 Awkward bits:
 
   Associations and the cryptic errors.
+  Heroku  
 
 Awesome bits:
 
   Building a real world application and the ability to build upon features.
+
+Unsolved problems:
+
+  Build a like model.
 
 Where next:
 
