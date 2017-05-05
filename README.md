@@ -20,6 +20,10 @@ Wireframes:
 
   https://www.dropbox.com/s/l5j1phvqk526til/Dribble%20Wireframes.png?dl=0
 
+Heroku link:
+
+    https://dribble-app.herokuapp.com/users
+
 Demo:
 
   Sign in/ sign up (new user)
@@ -33,7 +37,7 @@ Demo:
   Comment on a project
 
   Delete comment
-  
+
   Sign out
 
 Schema:
@@ -57,7 +61,7 @@ Awkward bits:
   Associations and the cryptic errors.
   Heroku  
 
-Awesome bits:
+Cool beans:
 
   Building a real world application and the ability to build upon features.
 
